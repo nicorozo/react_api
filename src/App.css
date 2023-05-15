@@ -3,3 +3,8 @@
   width: 100vw;
   height: 100vh;
 }
+
+.window-container {
+  background-color: var(--white);
+  height: 100%;
+}

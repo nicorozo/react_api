@@ -1,0 +1,26 @@
+.rightSection-wrapper {
+    background-color: var(--white);
+    column-gap: 1rem;
+}
+
+.title-container {
+    background-color: antiquewhite;
+    height: 100px;
+}
+
+div .results-container {
+    height: 700px;
+    column-gap: 1rem;
+    align-items: start;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+
+.result {
+    min-width: 200px;
+    height: 200px;
+    max-height: 200px;
+    row-gap: 1rem;
+    background: var(--primary);
+
+}

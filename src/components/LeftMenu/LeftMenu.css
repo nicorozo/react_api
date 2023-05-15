@@ -1,0 +1,36 @@
+.leftMenu-wrapper {
+    background-color: var(--primary);
+    width: 400px;
+    height: 100%;
+}
+
+.selector-container {}
+
+.selector-button {
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.tags-wrapper {
+    height: 500px;
+}
+
+div .tags-container {
+    row-gap: 0.7rem;
+    column-gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.tags {
+    display: flex;
+    padding: 0.5rem 1rem;
+    background: var(--red);
+    border: 1px black solid;
+    border-radius: 10px;
+}
+
+.filters-container {
+    background: var(--gray);
+    height: 100px;
+
+}
