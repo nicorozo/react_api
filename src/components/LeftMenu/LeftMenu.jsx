@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import './LeftMenu.css'
 
-const LeftMenu = () => {
-    const [selector, setSelector] = useState('')
-
+const LeftMenu = ({ children }) => {
     const tagsArray = ['chem', 'bvieu', 'opjhb', 'asdhas', 'sinsna']
-    console.log(selector)
+
     return (
         <section className="  leftMenu-wrapper">
             <div className=" innerWidth selector-container flexColCenter">
-                <button className="selector-button" onClick={() => setSelector('Prize')}>Prize</button>
-                <button className="selector-button" onClick={() => setSelector('Laureate')}>Laureate</button>
-                <button className="selector-button" onClick={() => setSelector('Country')}>Country</button>
+                {children}
             </div>
             <div className="tags-wrapper">
                 <div className="innerWidth paddings flexCenter tags-container">
