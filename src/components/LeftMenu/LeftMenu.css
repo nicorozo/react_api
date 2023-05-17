@@ -33,3 +33,10 @@ div .tags-container {
     height: 100px;
 
 }
+
+.laureate-category {
+    background: none;
+    color: black;
+    font-weight: bold;
+
+}

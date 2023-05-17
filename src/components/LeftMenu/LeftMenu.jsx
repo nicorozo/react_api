@@ -11,7 +11,7 @@ const LeftMenu = ({ children }) => {
             </div>
             <div className="tags-wrapper">
                 <div className="innerWidth paddings flexCenter tags-container">
-                    {tagsArray.map((item, index) =>
+                    {tagsArray.slice(0, 10).map((item, index) =>
                         <div className="tags" key={index}>{item}</div>
                     )}
                 </div>
