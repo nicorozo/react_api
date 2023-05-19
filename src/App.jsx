@@ -6,24 +6,28 @@ import './App.css'
 
 
 function App() {
-  const [selector, setSelector] = useState('/laureates')
+  const [selector, setSelector] = useState('')
+  const [category, setCategory] = useState('')
+  const [year, setYear] = useState('')
   const [data, setData] = useState([])
 
   useEffect(() => {
     const options = { method: 'GET', headers: { accept: 'application/json' } };
 
-    fetch(`https://api.nobelprize.org/2.1${selector}`, options)
+    fetch(`https://api.nobelprize.org/2.1/${selector}`, options)
       .then((response) => response.json())
       .then((json) => setData(json));
   }, [selector])
-  console.log(data.laureates)
+  console.log(data)
+
+
   return (
     <div className='App paddings'>
       <div className="window-container innerWidth padding flexStart ">
         <LeftMenu>
-          <button className="selector-button" onClick={() => setSelector('/laureates')}>Posts</button>
-          <button className="selector-button" onClick={() => setSelector('/nobelPrizes')}>Todos</button>
-          <button className="selector-button" onClick={() => setSelector('/nobelPrizes')}>Photos</button>
+          <button className="selector-button" onClick={() => setSelector('laureates')}>Laureates</button>
+          <button className="selector-button" onClick={() => setSelector(`nobelPrize/${category}/${year}`)}>Category</button>
+          <button className="selector-button" onClick={() => setSelector('nobelPrizes')}>Countries</button>
         </LeftMenu>
         <RightSection data={data.laureates}>
 

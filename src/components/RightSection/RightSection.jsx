@@ -3,6 +3,7 @@ import './RightSection.css'
 
 const RightSection = ({ data }) => {
   /* `${item.wikidata.url}#/media/File:${item.wikipedia.slug}.jpg` */
+  console.log(data)
   return (
     <section className="rightSection-wrapper flexColCenter innerWidth">
       <div className=" innerWidth title-container">

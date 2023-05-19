@@ -2,7 +2,14 @@ import React from "react";
 import './LeftMenu.css'
 
 const LeftMenu = ({ children }) => {
-    const tagsArray = ['chem', 'bvieu', 'opjhb', 'asdhas', 'sinsna']
+    const novelPrizeCategories = [
+        "Physics",
+        "Chemistry",
+        "Medicine",
+        "Literature",
+        "Peace",
+        "Economic Sciences"
+    ]
 
     return (
         <section className="  leftMenu-wrapper">
@@ -11,7 +18,7 @@ const LeftMenu = ({ children }) => {
             </div>
             <div className="tags-wrapper">
                 <div className="innerWidth paddings flexCenter tags-container">
-                    {tagsArray.slice(0, 10).map((item, index) =>
+                    {novelPrizeCategories.map((item, index) =>
                         <div className="tags" key={index}>{item}</div>
                     )}
                 </div>
