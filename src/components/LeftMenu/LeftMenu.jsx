@@ -1,25 +1,30 @@
 import React from "react";
 import './LeftMenu.css'
 
-const LeftMenu = ({ children }) => {
+const LeftMenu = ({ setCategoryProperty, handleSelector }) => {
+
     const novelPrizeCategories = [
-        "Physics",
-        "Chemistry",
-        "Medicine",
-        "Literature",
-        "Peace",
-        "Economic Sciences"
+        { name: "Physics", value: "phy" },
+        { name: "Chemistry", value: "che" },
+        { name: "Medicine", value: "med" },
+        { name: "Literature", value: "lit" },
+        { name: "Peace", value: "pea" },
+        { name: "Economic Sciences", value: "eco" }
     ]
 
     return (
         <section className="  leftMenu-wrapper">
             <div className=" innerWidth selector-container flexColCenter">
-                {children}
+
+                <button className="selector-button" onClick={() => handleSelector('laureates')}>Laureates</button>
+                <button className="selector-button" onClick={() => handleSelector('categories')}>Categories</button>
+                <button className="selector-button" onClick={() => handleSelector('countries')}>Countries</button>
+
             </div>
             <div className="tags-wrapper">
                 <div className="innerWidth paddings flexCenter tags-container">
-                    {novelPrizeCategories.map((item, index) =>
-                        <div className="tags" key={index}>{item}</div>
+                    {novelPrizeCategories.map((item) =>
+                        <button className="tags" onClick={() => setCategoryProperty(item.value)} key={item.value}>{item.name}</button>
                     )}
                 </div>
             </div>

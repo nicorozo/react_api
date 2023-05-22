@@ -1,21 +1,23 @@
 import React from 'react'
 import './RightSection.css'
 
-const RightSection = ({ data }) => {
+const RightSection = ({ apiData }) => {
   /* `${item.wikidata.url}#/media/File:${item.wikipedia.slug}.jpg` */
-  console.log(data)
+  console.log('RightComponent:', apiData)
   return (
     <section className="rightSection-wrapper flexColCenter innerWidth">
       <div className=" innerWidth title-container">
         <h2 className="primaryText title">Nobel Prize API</h2>
       </div>
       <div className="paddings innerWidth flexStart results-container">
-        {data?.slice(0, 8).map((item, index) =>
-          <div className="flexColCenter result" key={index}>
-            <span className="name">{item.fullName.en}</span>
-            <span className="year">{item.nobelPrizes[0].awardYear}</span>
+
+        {apiData.laureates?.map((data) =>
+
+          <div className="flexColCenter result" key={data.id}>
+            <span className="name">{data.fullName.en}</span>
+            <span className="year">{data.nobelPrizes[0].awardYear}</span>{/* change item.connection */}
             <div className=" laureate-category">
-              <span>{item.nobelPrizes[0].category.en}</span>
+              <span>{data.nobelPrizes[0].category.en}</span>
             </div>
           </div>
         )}
