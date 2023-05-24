@@ -7,32 +7,31 @@ import './App.css'
 
 function App() {
   const [selector, setSelector] = useState('')
-  const [category, setCategory] = useState('')
-  const [year, setYear] = useState('')
+  const [category, setCategory] = useState('che')
+  const [year, setYear] = useState('2022')
   const [data, setData] = useState([])
   const [activeSelector, setActiveSelector] = useState('')
 
   useEffect(() => {
-    if (activeSelector === 'laureates') {
-      setSelector('laureates?limit=10')
+    const options = { method: 'GET', headers: { accept: 'application/json' } };
+
+    if (activeSelector === 'nobelPrizes') {
+      setSelector('nobelPrizes?limit=10')
     } else if (activeSelector === 'categories') {
       setSelector(`nobelPrize/${category}/${year}`)
     } else if (activeSelector === 'countries') {
       setSelector('laureates?limit=1')
     }
-  }, [activeSelector])
 
-  useEffect(() => {
-    const options = { method: 'GET', headers: { accept: 'application/json' } };
 
     fetch(`https://api.nobelprize.org/2.1/${selector}`, options)
       .then((response) => response.json())
-      .then((json) => setData(json));
+      .then((json) => setData(json))
 
-  }, [selector, category])
-  console.log(activeSelector)
-  console.log('App data:', data)
 
+    console.log('App ActiveSelector: ', activeSelector, 'Selector: ', selector)
+    console.log('App data #1:', data)
+  }, [activeSelector, selector, year, category])
 
 
   return (
@@ -41,7 +40,7 @@ function App() {
         <LeftMenu setCategoryProperty={setCategory} handleSelector={setActiveSelector} >
 
         </LeftMenu>
-        <RightSection apiData={data} activeSelector={activeSelector}>{/*data point */}
+        <RightSection apiData={data} activeSelector={activeSelector}>
 
         </RightSection>
       </div>

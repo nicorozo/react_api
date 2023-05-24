@@ -16,7 +16,7 @@ const LeftMenu = ({ setCategoryProperty, handleSelector }) => {
         <section className="  leftMenu-wrapper">
             <div className=" innerWidth selector-container flexColCenter">
 
-                <button className="selector-button" onClick={() => handleSelector('laureates')}>Laureates</button>
+                <button className="selector-button" onClick={() => handleSelector('nobelPrizes')}>Nobel Prizes</button>
                 <button className="selector-button" onClick={() => handleSelector('categories')}>Categories</button>
                 <button className="selector-button" onClick={() => handleSelector('countries')}>Countries</button>
 
