@@ -18,7 +18,7 @@ function App() {
     if (activeSelector === 'nobelPrizes') {
       setSelector('laureates?limit=12')
     } else if (activeSelector === 'categories') {
-      setSelector(`nobelPrize/${category}/${year}`)
+      setSelector(`nobelPrizes?limit=12`)
     }
 
 
