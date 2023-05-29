@@ -16,11 +16,9 @@ function App() {
     const options = { method: 'GET', headers: { accept: 'application/json' } };
 
     if (activeSelector === 'nobelPrizes') {
-      setSelector('nobelPrizes?limit=10')
+      setSelector('laureates?limit=12')
     } else if (activeSelector === 'categories') {
       setSelector(`nobelPrize/${category}/${year}`)
-    } else if (activeSelector === 'countries') {
-      setSelector('laureates?limit=1')
     }
 
 

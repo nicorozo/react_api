@@ -18,7 +18,6 @@ const LeftMenu = ({ setCategoryProperty, handleSelector }) => {
 
                 <button className="selector-button" onClick={() => handleSelector('nobelPrizes')}>Nobel Prizes</button>
                 <button className="selector-button" onClick={() => handleSelector('categories')}>Categories</button>
-                <button className="selector-button" onClick={() => handleSelector('countries')}>Countries</button>
 
             </div>
             <div className="tags-wrapper">

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import NobelPrizes from './NobelPrizes/NobelPrizes'
 import Categories from './Categories/Categories'
-import Countries from './Countries/Countries'
 import './RightSection.css'
 
 
@@ -10,8 +9,6 @@ const Display = ({ activeSelector, apiData }) => {
     return <NobelPrizes apiData={apiData} />
   } else if (activeSelector === 'categories') {
     return <Categories apiData={apiData} />
-  } else if (activeSelector === 'countries') {
-    return <Countries apiData={apiData} />
   }
   else return null
 }
