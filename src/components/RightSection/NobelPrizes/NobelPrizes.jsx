@@ -27,13 +27,13 @@ const NobelPrizes = ({ apiData }) => {
                             <div className="circle" style={{ backgroundColor: categoryColor(data) }}></div>
                         </div>
                         <div className="flexColCenter category-text">
-                            <span>{data.nobelPrizes[0].category.en}</span>
-                            <span>{data.nobelPrizes[0].awardYear}</span>
+                            <span>{data.nobelPrizes[0]?.category.en}</span>
+                            <span>{data.nobelPrizes[0]?.awardYear}</span>
                         </div>
                     </div>
                     <div className="flexColStart innerWidth info-text">
-                        <span className="name">{data.knownName.en}</span>
-                        <span className="year">{data.birth.place?.country.en}</span>
+                        <span className="name">{data.knownName?.en}</span>
+                        <span className="year">{data.birth?.place?.country.en}</span>
                     </div>
                     <div className="info-container">
                         <a href={`${data.wikipedia?.english}`}>

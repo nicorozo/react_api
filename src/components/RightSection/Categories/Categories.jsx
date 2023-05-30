@@ -10,6 +10,7 @@ const Categories = ({ apiData }) => {
                 <div className="flexColCenter card" key={index}>
                     <span className="name">{data.dateAwarded}</span>
                     <span className="name">{data.category.en}</span>
+                    <span className="name">{'$' + data.prizeAmount}</span>
                 </div>
             )}
         </div>

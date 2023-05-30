@@ -7,29 +7,35 @@ import './App.css'
 
 function App() {
   const [selector, setSelector] = useState('')
-  const [category, setCategory] = useState('che')
-  const [year, setYear] = useState('2022')
-  const [data, setData] = useState([])
   const [activeSelector, setActiveSelector] = useState('')
+  const [data, setData] = useState([])
+  //Endpoint filters
+  const [limit, setLimit] = useState('?limit=12')
+  const [category, setCategory] = useState('')
+  const [sort, setSort] = useState('&sort=asc')
+  const [year, setYear] = useState('2022')
+
+  useEffect(() => {
+    if (activeSelector === 'nobelPrizes') {
+      setCategory('')
+      setSelector('laureates' + limit)
+    } else if (activeSelector === 'categories') {
+      setCategory('')
+      setSelector(`nobelPrizes` + limit)
+    }
+  }, [activeSelector])
 
   useEffect(() => {
     const options = { method: 'GET', headers: { accept: 'application/json' } };
 
-    if (activeSelector === 'nobelPrizes') {
-      setSelector('laureates?limit=12')
-    } else if (activeSelector === 'categories') {
-      setSelector(`nobelPrizes?limit=12`)
-    }
-
-
-    fetch(`https://api.nobelprize.org/2.1/${selector}`, options)
+    fetch(`https://api.nobelprize.org/2.1/${selector}${sort}${category}`, options)
       .then((response) => response.json())
       .then((json) => setData(json))
 
 
     console.log('App ActiveSelector: ', activeSelector, 'Selector: ', selector)
     console.log('App data #1:', data)
-  }, [activeSelector, selector, year, category])
+  }, [selector, year, category])
 
 
   return (

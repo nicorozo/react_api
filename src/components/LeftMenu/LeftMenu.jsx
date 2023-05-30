@@ -9,7 +9,8 @@ const LeftMenu = ({ setCategoryProperty, handleSelector }) => {
         { name: "Medicine", value: "med" },
         { name: "Literature", value: "lit" },
         { name: "Peace", value: "pea" },
-        { name: "Economic Sciences", value: "eco" }
+        { name: "Economic Sciences", value: "eco" },
+        { name: "All", value: "" }
     ]
 
     return (
@@ -23,13 +24,22 @@ const LeftMenu = ({ setCategoryProperty, handleSelector }) => {
             <div className="tags-wrapper">
                 <div className="innerWidth paddings flexCenter tags-container">
                     {novelPrizeCategories.map((item) =>
-                        <button className="tags" onClick={() => setCategoryProperty(item.value)} key={item.value}>{item.name}</button>
+                        <button className="tags" onClick={() => setCategoryProperty('&nobelPrizeCategory=' + item.value)} key={item.value}>{item.name}</button>
                     )}
                 </div>
             </div>
             <div className="innerWidth filters-container">
                 filters
-                <button className="search-button">Search</button>
+                <form onSubmit={(e) => {
+                    e.preventDefault()
+                    alert('hey')
+                }} className="filters-container">
+                    <label htmlFor="yearFrom">From</label>
+                    <input id="yearFrom" type="text" /><br />
+                    <label htmlFor="yearTo">To</label>
+                    <input id="yearTo" type="text" />
+                    <button className="search-button">Search</button>
+                </form>
             </div>
 
         </section>
