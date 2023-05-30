@@ -26,6 +26,6 @@ div .category-container {
     height: 50%;
 }
 
-div .more-info-btn {
-    background-color: var(--);
+a>.more-info-btn {
+    background-color: var(--red);
 }

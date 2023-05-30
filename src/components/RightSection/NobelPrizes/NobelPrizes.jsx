@@ -3,14 +3,28 @@ import './NobelPrizes.css'
 
 const NobelPrizes = ({ apiData }) => {
     console.log(apiData)
+    const categoryColor = (data) => {
+        if (data.nobelPrizes[0].category.en === 'Economic Sciences') {
+            return '#F95A00'
+        } else if (data.nobelPrizes[0].category.en === 'Physics') {
+            return '#1B4552'
+        } else if (data.nobelPrizes[0].category.en === 'Chemistry') {
+            return '#06BB90'
+        } else if (data.nobelPrizes[0].category.en === 'Literature') {
+            return '#7606BB'
+        } else if (data.nobelPrizes[0].category.en === 'Peace') {
+            return '#FFFFFF'
+        } else if (data.nobelPrizes[0].category.en === 'Physiology or Medicine') {
+            return '#5161B5'
+        } else return console.log('returning')
+    }
     return (
         <div className="paddings innerWidth flexStart results-container">
             {apiData.laureates?.map((data) =>
-
                 <div className="paddings flexColCenter card" key={data.id}>
                     <div className="flexStart innerWidth category-container">
                         <div className="circle-container">
-                            <div className="circle"></div>
+                            <div className="circle" style={{ backgroundColor: categoryColor(data) }}></div>
                         </div>
                         <div className="flexColCenter category-text">
                             <span>{data.nobelPrizes[0].category.en}</span>
