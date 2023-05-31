@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import './components/LeftMenu/LeftMenu.jsx'
 import LeftMenu from './components/LeftMenu/LeftMenu.jsx'
 import RightSection from './components/RightSection/RightSection.jsx'
 import './App.css'
@@ -14,6 +13,8 @@ function App() {
   const [category, setCategory] = useState('')
   const [sort, setSort] = useState('&sort=asc')
   const [year, setYear] = useState('2022')
+  const [yearFrom, setYearFrom] = useState('')
+  const [yearTo, setYearTo] = useState('')
 
   useEffect(() => {
     if (activeSelector === 'nobelPrizes') {
@@ -23,30 +24,35 @@ function App() {
       setCategory('')
       setSelector(`nobelPrizes` + limit)
     }
-  }, [activeSelector])
+
+    console.log(yearTo)
+  }, [activeSelector, yearTo])
 
   useEffect(() => {
     const options = { method: 'GET', headers: { accept: 'application/json' } };
 
-    fetch(`https://api.nobelprize.org/2.1/${selector}${sort}${category}`, options)
+    fetch(`https://api.nobelprize.org/2.1/${selector}${sort}${yearFrom}${yearTo}${category}`, options)
       .then((response) => response.json())
       .then((json) => setData(json))
 
 
     console.log('App ActiveSelector: ', activeSelector, 'Selector: ', selector)
     console.log('App data #1:', data)
-  }, [selector, year, category])
+  }, [selector, yearFrom, yearTo, category])
 
 
   return (
     <div className='App paddings'>
-      <div className="window-container innerWidth padding flexStart ">
-        <LeftMenu setCategoryProperty={setCategory} handleSelector={setActiveSelector} >
+      <div className="innerWidth padding flexStart window-container  ">
+        <LeftMenu
+          handleYearsFrom={setYearFrom}
+          handleYearsTo={setYearTo}
+          setCategoryProperty={setCategory}
+          handleSelector={setActiveSelector} />
+        <RightSection
+          apiData={data}
+          activeSelector={activeSelector} />
 
-        </LeftMenu>
-        <RightSection apiData={data} activeSelector={activeSelector}>
-
-        </RightSection>
       </div>
     </div>
   )

@@ -19,7 +19,7 @@ const NobelPrizes = ({ apiData }) => {
         } else return console.log('returning')
     }
     return (
-        <div className="paddings innerWidth flexStart results-container">
+        <div className=" innerWidth flexStart results-container">
             {apiData.laureates?.map((data) =>
                 <div className="paddings flexColCenter card" key={data.id}>
                     <div className="flexStart innerWidth category-container">

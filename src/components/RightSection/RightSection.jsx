@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import NobelPrizes from './NobelPrizes/NobelPrizes'
 import Categories from './Categories/Categories'
 import './RightSection.css'
@@ -16,8 +16,8 @@ const Display = ({ activeSelector, apiData }) => {
 const RightSection = ({ apiData, activeSelector }) => {
 
   return (
-    <section className="rightSection-wrapper flexColCenter innerWidth">
-      <div className=" innerWidth title-container">
+    <section className="paddings flexColCenter innerWidth rightSection-wrapper">
+      <div className=" paddings innerWidth flexCenter title-container">
         <h2 className="primaryText title">Nobel Prize API</h2>
       </div>
       <Display activeSelector={activeSelector} apiData={apiData} />

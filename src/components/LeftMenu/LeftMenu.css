@@ -6,9 +6,12 @@
 
 .selector-container {}
 
-.selector-button {
+div>.selector-button {
     width: 100%;
-    padding: 1rem 2rem;
+    border-radius: 2px;
+    border: none;
+    background-color: var(--black);
+    color: white;
 }
 
 .tags-wrapper {
@@ -21,12 +24,7 @@ div .tags-container {
     flex-wrap: wrap;
 }
 
-.tags {
-    display: flex;
-    padding: 0.5rem 1rem;
-    background: var(--red);
-    border-radius: 6px;
-}
+.tags {}
 
 .filters-container {
     background: var(--gray);

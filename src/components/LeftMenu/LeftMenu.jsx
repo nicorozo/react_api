@@ -1,7 +1,8 @@
 import React from "react";
 import './LeftMenu.css'
 
-const LeftMenu = ({ setCategoryProperty, handleSelector }) => {
+const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleSelector }) => {
+
 
     const novelPrizeCategories = [
         { name: "Physics", value: "phy" },
@@ -15,30 +16,39 @@ const LeftMenu = ({ setCategoryProperty, handleSelector }) => {
 
     return (
         <section className="  leftMenu-wrapper">
+
+            {/* SELECTORS */}
             <div className=" innerWidth selector-container flexColCenter">
-
-                <button className="selector-button" onClick={() => handleSelector('nobelPrizes')}>Nobel Prizes</button>
-                <button className="selector-button" onClick={() => handleSelector('categories')}>Categories</button>
-
+                <button className="button selector-button"
+                    onClick={() => handleSelector('nobelPrizes')}>Nobel Prizes</button>
+                <button className="button selector-button"
+                    onClick={() => handleSelector('categories')}>Categories</button>
             </div>
+
+            {/* BUTTONS */}
             <div className="tags-wrapper">
                 <div className="innerWidth paddings flexCenter tags-container">
                     {novelPrizeCategories.map((item) =>
-                        <button className="tags" onClick={() => setCategoryProperty('&nobelPrizeCategory=' + item.value)} key={item.value}>{item.name}</button>
+                        <button className="button tags" onClick={() => setCategoryProperty('&nobelPrizeCategory=' + item.value)} key={item.value}>{item.name}</button>
                     )}
                 </div>
             </div>
+
+            {/* FILTERS */}
             <div className="innerWidth filters-container">
-                filters
                 <form onSubmit={(e) => {
                     e.preventDefault()
-                    alert('hey')
+                    const yearFrom = document.getElementById('yearFrom')
+                    const yearTo = document.getElementById('yearTo')
+                    handleYearsFrom('&nobelPrizeYear=' + yearFrom.value)
+                    handleYearsTo('&yearTo=' + yearTo.value)
                 }} className="filters-container">
+
                     <label htmlFor="yearFrom">From</label>
                     <input id="yearFrom" type="text" /><br />
                     <label htmlFor="yearTo">To</label>
                     <input id="yearTo" type="text" />
-                    <button className="search-button">Search</button>
+                    <button type="submit" className="search-button">Search</button>
                 </form>
             </div>
 

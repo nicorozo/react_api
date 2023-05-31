@@ -3,6 +3,7 @@ div .card {
     height: 250px;
     background: var(--primary);
     justify-content: start;
+    border-radius: 5px;
 }
 
 div .category-container {
