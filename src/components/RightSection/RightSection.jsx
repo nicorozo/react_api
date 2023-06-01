@@ -17,7 +17,7 @@ const RightSection = ({ apiData, activeSelector }) => {
 
   return (
     <section className="paddings flexColCenter innerWidth rightSection-wrapper">
-      <div className=" paddings innerWidth flexCenter title-container">
+      <div className="  innerWidth flexCenter title-container">
         <h2 className="primaryText title">Nobel Prize API</h2>
       </div>
       <Display activeSelector={activeSelector} apiData={apiData} />

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import './LeftMenu.css'
 
 const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleSelector }) => {
     const [clickedSelector, setClickedSelector] = useState('')
+
 
     const novelPrizeCategories = [
         { name: "Physics", value: "phy" },
@@ -13,22 +14,26 @@ const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleS
         { name: "Economic Sciences", value: "eco" },
         { name: "All", value: "" }
     ]
+    /* const selectorColor = (event) => {
 
-    const selectorColor = (event) => {
-        const clicked = event.target.id
-        alert(clicked)
-    }
+        setClickedSelector(event.target.id) 
+        console.log(clickedSelector)
+
+        return handleSelector(clickedSelector)
+    } IN PROCESS */
 
     return (
         <section className="  leftMenu-wrapper">
 
             {/* SELECTORS */}
             <div className=" innerWidth selector-container flexColCenter">
-                <button className=" selector-button"
+                <button id="nobelPrizes"
+                    className=" selector-button"
                     style={{ backgroundColor: '' }}
-                    onClick={() => handleSelector('nobelPrizes')}>Nobel Prizes</button>
-                <button className=" selector-button"
-                    onClick={() => handleSelector('categories')}>Categories</button>
+                    onClick={() => handleSelector(() => event.target.id)}>Nobel Prizes</button>
+                <button id="categories"
+                    className=" selector-button"
+                    onClick={() => handleSelector(() => event.target.id)}>Categories</button>
             </div>
 
             {/* BUTTONS */}
@@ -41,20 +46,26 @@ const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleS
             </div>
 
             {/* FILTERS */}
-            <div className="innerWidth filters-container">
+            <div className="innerWidth paddings flexColCenter filters-container">
                 <form onSubmit={(e) => {
                     e.preventDefault()
                     const yearFrom = document.getElementById('yearFrom')
                     const yearTo = document.getElementById('yearTo')
                     handleYearsFrom('&nobelPrizeYear=' + yearFrom.value)
                     handleYearsTo('&yearTo=' + yearTo.value)
-                }} className="filters-container">
-
-                    <label htmlFor="yearFrom">From</label>
-                    <input id="yearFrom" type="text" /><br />
-                    <label htmlFor="yearTo">To</label>
-                    <input id="yearTo" type="text" />
-                    <button type="submit" className="search-button">Search</button>
+                }} className="innerWidth ">
+                    <div className="innerWidth flexCenter filterByYears">
+                        <span>Filter By Years</span>
+                    </div>
+                    <div className="  innerWidth flexEnd input-filter-container">
+                        <label htmlFor="yearFrom">From</label>
+                        <input placeholder="min 1901" maxLength={4} max={2023} min={1990} id="yearFrom" type="text" />
+                    </div>
+                    <div className="  innerWidth flexEnd input-filter-container">
+                        <label htmlFor="yearTo">To</label>
+                        <input placeholder="max 2023" maxLength={4} max={2023} min={1990} id="yearTo" type="text" />
+                    </div>
+                    <button type="submit" className="innerWidth search-button">Search</button>
                 </form>
             </div>
 

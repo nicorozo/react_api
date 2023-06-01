@@ -21,8 +21,13 @@ const NobelPrizes = ({ apiData }) => {
     return (
         <div className=" innerWidth flexStart results-container">
             {apiData.laureates?.map((data) =>
-                <div className="paddings flexColCenter card" key={data.id}>
-                    <div className="flexStart innerWidth category-container">
+                <div className=" flexColCenter card" key={data.id}>
+                    <div style={{ backgroundColor: categoryColor(data) }}
+                        className="innerWidth flexCenter category-div">
+
+                    </div>
+
+                    <div className="paddings flexStart innerWidth category-container">
                         <div className="circle-container">
                             <div className="circle" style={{ backgroundColor: categoryColor(data) }}></div>
                         </div>
@@ -31,7 +36,7 @@ const NobelPrizes = ({ apiData }) => {
                             <span>{data.nobelPrizes[0]?.awardYear}</span>
                         </div>
                     </div>
-                    <div className="flexColStart innerWidth info-text">
+                    <div className="paddings flexColStart innerWidth info-text">
                         <span className="name">{data.knownName?.en}</span>
                         <span className="year">{data.birth?.place?.country.en}</span>
                     </div>

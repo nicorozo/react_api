@@ -42,7 +42,7 @@ function App() {
 
 
   return (
-    <div className='App paddings'>
+    <div className='App paddings flexCenter'>
       <div className="innerWidth padding flexStart window-container  ">
         <LeftMenu
           handleYearsFrom={setYearFrom}
@@ -52,7 +52,6 @@ function App() {
         <RightSection
           apiData={data}
           activeSelector={activeSelector} />
-
       </div>
     </div>
   )

@@ -1,9 +1,21 @@
+div .results-container {
+    overflow: scroll;
+}
+
 div .card {
     width: 250px;
     height: 250px;
+    padding-top: 0;
     background: var(--primary);
     justify-content: start;
     border-radius: 5px;
+}
+
+div .category-div {
+    padding: 2px;
+
+    font-weight: bold;
+    color: black;
 }
 
 div .category-container {
@@ -29,4 +41,5 @@ div .category-container {
 
 a>.more-info-btn {
     background-color: var(--red);
+    color: var(--white);
 }
