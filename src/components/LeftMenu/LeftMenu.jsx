@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import './LeftMenu.css'
 
 const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleSelector }) => {
-
+    const [clickedSelector, setClickedSelector] = useState('')
 
     const novelPrizeCategories = [
         { name: "Physics", value: "phy" },
@@ -14,14 +14,20 @@ const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleS
         { name: "All", value: "" }
     ]
 
+    const selectorColor = (event) => {
+        const clicked = event.target.id
+        alert(clicked)
+    }
+
     return (
         <section className="  leftMenu-wrapper">
 
             {/* SELECTORS */}
             <div className=" innerWidth selector-container flexColCenter">
-                <button className="button selector-button"
+                <button className=" selector-button"
+                    style={{ backgroundColor: '' }}
                     onClick={() => handleSelector('nobelPrizes')}>Nobel Prizes</button>
-                <button className="button selector-button"
+                <button className=" selector-button"
                     onClick={() => handleSelector('categories')}>Categories</button>
             </div>
 
