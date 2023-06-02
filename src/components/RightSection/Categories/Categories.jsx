@@ -1,5 +1,5 @@
 import React from 'react'
-import '../RightSection.css'
+import './Categories.css'
 
 const Categories = ({ apiData }) => {
     console.log('Categories:', apiData.nobelPrizes)
@@ -7,7 +7,7 @@ const Categories = ({ apiData }) => {
         <div className="paddings innerWidth flexStart results-container">
             {apiData.nobelPrizes?.map((data, index) =>
 
-                <div className="flexColCenter card" key={index}>
+                <div className="flexColCenter categories-card" key={index}>
                     <span className="name">{data.dateAwarded}</span>
                     <span className="name">{data.category.en}</span>
                     <span className="name">{'$' + data.prizeAmount}</span>
