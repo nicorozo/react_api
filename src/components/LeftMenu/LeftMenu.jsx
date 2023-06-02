@@ -14,26 +14,26 @@ const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleS
         { name: "Economic Sciences", value: "eco" },
         { name: "All", value: "" }
     ]
-    /* const selectorColor = (event) => {
+    const selectorColor = () => {
 
-        setClickedSelector(event.target.id) 
-        console.log(clickedSelector)
-
-        return handleSelector(clickedSelector)
-    } IN PROCESS */
+        setClickedSelector(event.target.id)
+        return handleSelector(event.target.id)
+    }
 
     return (
         <section className="  leftMenu-wrapper">
 
             {/* SELECTORS */}
+            {console.log(clickedSelector)}
             <div className=" innerWidth selector-container flexColCenter">
                 <button id="nobelPrizes"
                     className=" selector-button"
-                    style={{ backgroundColor: '' }}
-                    onClick={() => handleSelector(() => event.target.id)}>Nobel Prizes</button>
+                    style={{ borderColor: clickedSelector === 'nobelPrizes' ? 'orangered' : '' }}
+                    onClick={() => selectorColor()}>Nobel Prizes</button>
                 <button id="categories"
                     className=" selector-button"
-                    onClick={() => handleSelector(() => event.target.id)}>Categories</button>
+                    style={{ borderColor: clickedSelector === 'categories' ? 'orangered' : '' }}
+                    onClick={() => selectorColor()}>Categories</button>
             </div>
 
             {/* BUTTONS */}
