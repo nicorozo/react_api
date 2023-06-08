@@ -1,0 +1,9 @@
+div .navbar {
+    padding: 0.7rem;
+    justify-content: space-between;
+    border-bottom: 2px black solid;
+}
+
+.nav-logo {
+    width: 100px;
+}
