@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import './LeftMenu.css'
 
 const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleSelector }) => {
@@ -21,11 +21,11 @@ const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleS
     }
 
     return (
-        <section className="  leftMenu-wrapper">
+        <section className="flexColCenter leftMenu-wrapper">
 
             {/* SELECTORS */}
-            {console.log(clickedSelector)}
-            <div className=" innerWidth selector-container flexColCenter">
+
+            <div className=" innerWidth  flexColCenter selector-container">
                 <button id="nobelPrizes"
                     className=" selector-button"
                     style={{ borderColor: clickedSelector === 'nobelPrizes' ? 'orangered' : '' }}
@@ -37,7 +37,7 @@ const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleS
             </div>
 
             {/* BUTTONS */}
-            <div className="tags-wrapper">
+            <div className=" paddings tags-wrapper">
                 <div className="innerWidth paddings flexCenter tags-container">
                     {novelPrizeCategories.map((item) =>
                         <button className="button tags" onClick={() => setCategoryProperty('&nobelPrizeCategory=' + item.value)} key={item.value}>{item.name}</button>

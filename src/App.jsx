@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Navbar from './components/Navbar/Navbar.jsx'
 import LeftMenu from './components/LeftMenu/LeftMenu.jsx'
 import RightSection from './components/RightSection/RightSection.jsx'
 import './App.css'
@@ -40,19 +41,21 @@ function App() {
     console.log('App data #1:', data)
   }, [selector, yearFrom, yearTo, category])
 
-
   return (
     <div className='App paddings flexCenter'>
-      <div className="innerWidth padding flexStart window-container  ">
-        <LeftMenu
-          handleYearsFrom={setYearFrom}
-          handleYearsTo={setYearTo}
-          setCategoryProperty={setCategory}
-          handleSelector={setActiveSelector} />
-        <RightSection
-          apiData={data}
-          activeSelector={activeSelector} />
-      </div>
+      <section className='innerWidth flexColCenter window-container '>
+        <Navbar />
+        <div className="innerWidth flexStart">
+          <LeftMenu
+            handleYearsFrom={setYearFrom}
+            handleYearsTo={setYearTo}
+            setCategoryProperty={setCategory}
+            handleSelector={setActiveSelector} />
+          <RightSection
+            apiData={data}
+            activeSelector={activeSelector} />
+        </div>
+      </section>
     </div>
   )
 }
