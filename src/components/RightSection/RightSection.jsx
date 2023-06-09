@@ -16,12 +16,14 @@ const Display = ({ activeSelector, apiData }) => {
 const RightSection = ({ apiData, activeSelector }) => {
 
   return (
-    <section className="paddings flexColCenter innerWidth rightSection-wrapper">
-      <div className="  innerWidth flexCenter title-container">
+    <div>
+      <div className=" paddings innerWidth flexStart title-container">
         <h2 className="primaryText title">Nobel Prize API</h2>
       </div>
-      <Display activeSelector={activeSelector} apiData={apiData} />
-    </section>
+      <section className="paddings flexColCenter innerWidth rightSection-wrapper">
+        <Display activeSelector={activeSelector} apiData={apiData} />
+      </section>
+    </div>
   )
 }
 

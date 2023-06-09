@@ -15,14 +15,14 @@ const Navbar = () => {
             <Switch
                 checked={enabled}
                 onChange={setEnabled}
-                className={`${enabled ? 'bg-neutral-50' : 'bg-slate-900'}
-          relative inline-flex h-[28px] w-[54px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+                className={`${enabled ? 'bg-neutral-500' : 'bg-slate-900'}
+          relative inline-flex h-[22px] w-[38px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
                 <span className="sr-only">Use setting</span>
                 <span
                     aria-hidden="true"
-                    className={`${enabled ? 'translate-x-9' : 'translate-x-0'}
-            pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
+                    className={`${enabled ? 'translate-x-4' : 'translate-x-0'}
+            pointer-events-none inline-block h-[18px] w-[18px] transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
                 />
             </Switch>
 
