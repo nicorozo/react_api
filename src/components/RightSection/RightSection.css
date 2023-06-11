@@ -1,18 +1,4 @@
-.rightSection-wrapper {
+div .rightSection-wrapper {
     background-color: var(--white);
     height: 100%;
-}
-
-div .title-container {
-    padding: 0 4rem;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-div .results-container {
-    height: 700px;
-    row-gap: 1rem;
-    align-items: start;
-    justify-content: space-around;
-    flex-wrap: wrap;
 }

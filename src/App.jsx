@@ -10,7 +10,7 @@ function App() {
   const [activeSelector, setActiveSelector] = useState('')
   const [data, setData] = useState([])
   //Endpoint filters
-  const [limit, setLimit] = useState('?limit=12')
+  const [limit, setLimit] = useState('?limit=9')
   const [category, setCategory] = useState('')
   const [sort, setSort] = useState('&sort=asc')
   const [year, setYear] = useState('2022')
@@ -43,9 +43,9 @@ function App() {
 
   return (
     <div className='App paddings flexCenter'>
-      <section className='innerWidth flexColCenter window-container '>
+      <section className='innerWidth flexColStart window-section '>
         <Navbar />
-        <div className="innerWidth flexStart">
+        <div className="innerWidth flexStart window-container">
           <LeftMenu
             handleYearsFrom={setYearFrom}
             handleYearsTo={setYearTo}

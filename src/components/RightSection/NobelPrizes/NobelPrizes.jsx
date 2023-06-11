@@ -29,10 +29,12 @@ const NobelPrizes = ({ apiData }) => {
 
                     <div className="paddings flexStart innerWidth category-container">
                         <div className="circle-container">
-                            <div className="circle" style={{ backgroundColor: categoryColor(data) }}></div>
+                            <div className="circle" style={{ backgroundColor: categoryColor(data) }}>
+                                <span>{data.nobelPrizes[0]?.category.en}</span>
+                            </div>
                         </div>
                         <div className="flexColCenter category-text">
-                            <span>{data.nobelPrizes[0]?.category.en}</span>
+
                             <span>{data.nobelPrizes[0]?.awardYear}</span>
                         </div>
                     </div>

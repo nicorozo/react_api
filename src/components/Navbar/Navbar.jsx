@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Switch } from '@headlessui/react'
+import { SiCircle } from "react-icons/si";
 import './Navbar.css'
 
 
@@ -9,8 +10,10 @@ const Navbar = () => {
 
     return (
         <div className="innerWidth flexCenter navbar">
-            <img className='nav-logo' src="https://1.bp.blogspot.com/-Txgu8uawwfU/Tv1YT98TlhI/AAAAAAAAAKM/RA-sZFf85Nw/s320/Small+Business+Logos+4.jpg" alt="" />
-
+            <div className='innerwidth flexStart'>
+                <SiCircle className='nav-logo' />
+                <h2 className="innerWidth nav-logo">Nobel Prize API </h2>
+            </div>
 
             <Switch
                 checked={enabled}

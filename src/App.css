@@ -3,13 +3,11 @@
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
 }
 
-.window-container {
+.window-section {
   background-color: var(--white);
-  height: 100%;
   border-radius: 10px;
-  justify-content: space-between;
 }
+
+.window-container {}
