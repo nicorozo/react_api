@@ -10,14 +10,13 @@
 div .window-section {
   background-color: var(--white);
   border-radius: 10px;
-  /*   height: 800px; */
   justify-content: start;
+
 }
 
 div .window-container {
   justify-content: start;
   align-items: start;
   margin: 0;
-  /*   height: 96%; */
   width: 100%;
 }

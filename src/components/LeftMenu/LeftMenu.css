@@ -12,6 +12,7 @@ div .selector-container {
 }
 
 div>.selector-button {
+    font-weight: bold;
     width: 100%;
     padding: 1rem;
     border-radius: 2px;
@@ -84,4 +85,20 @@ div .search-button {
     padding: .5rem;
     border-radius: 5px;
     background-color: var(--black);
+}
+
+div .arrows-container {
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.arrows-container>.button {
+    width: 4rem;
+
+}
+
+.div-test {
+    height: 100%;
+
 }
