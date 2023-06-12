@@ -9,7 +9,7 @@ const Navbar = () => {
     const [enabled, setEnabled] = useState(false)
 
     return (
-        <div className=" flexCenter navbar">
+        <div className="flexCenter navbar">
             <div className='innerwidth flexStart'>
                 <SiCircle className='nav-logo' />
                 <h2 className="innerWidth nav-logo">Nobel Prize API </h2>

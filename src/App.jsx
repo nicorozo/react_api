@@ -45,7 +45,7 @@ function App() {
     <div className='App paddings flexCenter'>
       <section className='innerWidth flexColStart window-section '>
         <Navbar />
-        <div className=" flexStart window-container">
+        <div className="flexStart window-container">
           <LeftMenu
             handleYearsFrom={setYearFrom}
             handleYearsTo={setYearTo}
