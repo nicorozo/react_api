@@ -16,7 +16,7 @@ const Display = ({ activeSelector, apiData }) => {
 const RightSection = ({ apiData, activeSelector }) => {
 
   return (
-    <section className=" flexColCenter innerWidth rightSection-wrapper">
+    <section className=" flexColCenter rightSection-wrapper">
       <Display activeSelector={activeSelector} apiData={apiData} />
     </section>
 

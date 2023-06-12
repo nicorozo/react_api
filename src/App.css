@@ -3,11 +3,21 @@
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  height: 100vh;
+
 }
 
-.window-section {
+div .window-section {
   background-color: var(--white);
   border-radius: 10px;
+  /*   height: 800px; */
+  justify-content: start;
 }
 
-.window-container {}
+div .window-container {
+  justify-content: start;
+  align-items: start;
+  margin: 0;
+  /*   height: 96%; */
+  width: 100%;
+}

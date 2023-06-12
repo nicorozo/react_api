@@ -1,4 +1,6 @@
 div .navbar {
+    width: 100%;
+    height: %;
     padding: 0rem 1rem;
     justify-content: space-between;
     border-bottom: 2px gray solid;

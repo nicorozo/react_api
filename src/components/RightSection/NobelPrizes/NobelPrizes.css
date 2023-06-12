@@ -13,8 +13,12 @@ div .card {
     justify-content: start;
     border-radius: 10px;
     border: 2px black solid;
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 7px 7px 2px black;
+
+    animation-name: card-animation;
+    animation-duration: .4s;
 }
+
 
 div .category-div {
     padding: 2px;
@@ -34,9 +38,18 @@ div .category-container {
     background-color: var(--secondary);
 }
 
+.circle-container {
+    height: 3rem;
+}
+
+.circle>span {
+    font-weight: bold;
+}
+
 .category-text {
+    height: 1rem;
     font-size: 0.7rem;
-    max-width: 50px;
+    font-weight: bold;
 }
 
 .info-text {
@@ -48,6 +61,9 @@ div .category-container {
 }
 
 a>.more-info-btn {
-    background-color: var(--red);
+    background-color: #D44D27;
     color: var(--black);
+    font-size: 0.7rem;
+    box-shadow: inset -1px -1px 6px rgb(174, 28, 28);
+    border: 1px black solid;
 }

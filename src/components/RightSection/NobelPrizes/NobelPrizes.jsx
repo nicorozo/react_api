@@ -19,7 +19,7 @@ const NobelPrizes = ({ apiData }) => {
         } else return console.log('returning')
     }
     return (
-        <div className=" innerWidth flexStart results-container">
+        <div className="paddings innerWidth flexStart results-container">
             {apiData.laureates?.map((data) =>
                 <div className="px-8 flexColCenter card" key={data.id}>
                     <div style={{ backgroundColor: categoryColor(data) }}

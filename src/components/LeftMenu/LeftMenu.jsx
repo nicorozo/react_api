@@ -21,7 +21,7 @@ const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleS
     }
 
     return (
-        <section className="flexColCenter leftMenu-wrapper">
+        <section className="flexColStart leftMenu-wrapper">
 
             {/* SELECTORS */}
 
@@ -38,7 +38,7 @@ const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleS
 
             {/* BUTTONS */}
             <div className=" paddings tags-wrapper">
-                <div className="innerWidth paddings flexCenter tags-container">
+                <div className="innerWidth  flexStart tags-container">
                     {novelPrizeCategories.map((item) =>
                         <button className="button tags" onClick={() => setCategoryProperty('&nobelPrizeCategory=' + item.value)} key={item.value}>{item.name}</button>
                     )}

@@ -151,3 +151,13 @@ a {
 .button:active {
   background-color: #fe8300;
 }
+
+@keyframes card-animation {
+  from {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
