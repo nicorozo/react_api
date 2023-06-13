@@ -11,9 +11,9 @@ function App() {
   const [data, setData] = useState([])
   //Endpoint filters
   const [limit, setLimit] = useState('?limit=9')
-  const [category, setCategory] = useState('')
   const [sort, setSort] = useState('&sort=asc')
-  const [year, setYear] = useState('2022')
+  const [offset, setOffset] = useState(0)
+  const [category, setCategory] = useState('')
   const [yearFrom, setYearFrom] = useState('')
   const [yearTo, setYearTo] = useState('')
 
@@ -32,14 +32,14 @@ function App() {
   useEffect(() => {
     const options = { method: 'GET', headers: { accept: 'application/json' } };
 
-    fetch(`https://api.nobelprize.org/2.1/${selector}${sort}${yearFrom}${yearTo}${category}`, options)
+    fetch(`https://api.nobelprize.org/2.1/${selector}&offset=${offset}${sort}${yearFrom}${yearTo}${category}`, options)
       .then((response) => response.json())
       .then((json) => setData(json))
 
 
     console.log('App ActiveSelector: ', activeSelector, 'Selector: ', selector)
     console.log('App data #1:', data)
-  }, [selector, yearFrom, yearTo, category])
+  }, [selector, yearFrom, yearTo, category, offset])
 
   return (
     <div className='App paddings flexCenter'>
@@ -50,7 +50,8 @@ function App() {
             handleYearsFrom={setYearFrom}
             handleYearsTo={setYearTo}
             setCategoryProperty={setCategory}
-            handleSelector={setActiveSelector} />
+            handleSelector={setActiveSelector}
+            handleOffset={setOffset} />
           <RightSection
             apiData={data}
             activeSelector={activeSelector} />

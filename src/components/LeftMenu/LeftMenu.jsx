@@ -1,8 +1,20 @@
 import React, { useState } from "react";
 import './LeftMenu.css'
 
-const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleSelector }) => {
+const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleSelector, handleOffset }) => {
     const [clickedSelector, setClickedSelector] = useState('')
+    const [offset, setOffset] = useState(0)
+
+    const previousButton = () => {
+        if (offset >= 9) {
+            setOffset((n) => n - 9)
+            handleOffset(offset)
+        }
+    }
+    const nextButton = () => {
+        setOffset((n) => n + 9)
+        handleOffset(offset)
+    }
 
 
     const novelPrizeCategories = [
@@ -71,8 +83,13 @@ const LeftMenu = ({ handleYearsFrom, handleYearsTo, setCategoryProperty, handleS
                 </div>
                 {/* Arrows */}
                 <div className="paddings flexCenter arrows-container">
-                    <button className="button tags">Previous</button>
-                    <button className="button tags">Next</button>
+                    <button onClick={() => previousButton()}
+                        style={{
+                            backgroundColor: offset === 0 ? "gray" : '',
+                        }}
+                        className="button tags">Previous</button>
+                    <button onClick={() => nextButton()}
+                        className="button tags">Next</button>
                 </div>
             </div>
         </section>
