@@ -17,6 +17,17 @@ function App() {
   const [yearFrom, setYearFrom] = useState('')
   const [yearTo, setYearTo] = useState('')
 
+  const previousButton = () => {
+    if (offset >= 9) {
+      setOffset((n) => n - 9)
+    }
+  }
+  const nextButton = () => {
+    if (offset <= 72) {
+      setOffset((n) => n + 9)
+    }
+  }
+
   useEffect(() => {
     if (activeSelector === 'nobelPrizes') {
       setCategory('')
@@ -51,7 +62,9 @@ function App() {
             handleYearsTo={setYearTo}
             setCategoryProperty={setCategory}
             handleSelector={setActiveSelector}
-            handleOffset={setOffset} />
+            nextButton={nextButton}
+            previousButton={previousButton}
+            offset={offset} />
           <RightSection
             apiData={data}
             activeSelector={activeSelector} />
