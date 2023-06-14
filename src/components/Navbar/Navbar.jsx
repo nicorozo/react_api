@@ -19,7 +19,6 @@ const Navbar = () => {
                     <h2 className="innerWidth nav-logo">Nico Rozo </h2>
                 </div>
             </a>
-
         </div>
     )
 }

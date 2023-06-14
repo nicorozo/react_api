@@ -35,7 +35,6 @@ const RightSection = ({ apiData, activeSelector }) => {
   return (
     <section className=" flexColCenter rightSection-wrapper">
       {activeSelector ? <Display activeSelector={activeSelector} apiData={apiData} /> : <IntroText />}
-
     </section>
 
   )
