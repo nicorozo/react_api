@@ -16,7 +16,7 @@ div .card {
     box-shadow: 7px 7px 2px black;
 
     animation-name: card-animation;
-    animation-duration: .4s;
+    animation-duration: .2s;
 }
 
 
