@@ -1,7 +1,7 @@
 <h1>Nobel Prize API</h1>
 
 <a href="bright-stardust-02cb60.netlify.app" color="red">
-    API Desktop interface
+    Click here for Live Version
 </a>
 
 <p>I wanted to create an application where I could fetch data from an 
