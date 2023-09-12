@@ -19,35 +19,23 @@ const NobelPrizes = ({ apiData }) => {
         } else return console.log('returning')
     }
     return (
-        <div className="paddings innerWidth flexStart results-container">
+        <div className=" results-container">
             {apiData.laureates?.map((data) =>
-                <div className="px-8 flexColCenter card" key={data.id}>
-                    <div style={{ backgroundColor: categoryColor(data) }}
-                        className="innerWidth flexCenter category-div">
-
-                    </div>
-
-                    <div className="flexStart innerWidth category-container">
-                        <div className="circle-container">
-                            <div className="circle" style={{ backgroundColor: categoryColor(data) }}>
-                                <span>{data.nobelPrizes[0]?.category.en}</span>
-                            </div>
+                <a href={`${data.wikipedia?.english}`}>
+                    <div className="card" key={data.id}>
+                        <div style={{ backgroundColor: categoryColor(data) }}
+                            className="flexCenter category-div">
+                            <span>{data.nobelPrizes[0]?.category.en == 'Economic Sciences' ? 'Economy' : data.nobelPrizes[0]?.category.en}</span>
                         </div>
                         <div className="flexColCenter category-text">
-
                             <span>{data.nobelPrizes[0]?.awardYear}</span>
                         </div>
+                        <div className="info-text">
+                            <span className="name">{data.knownName?.en}</span><br />
+                            <span className="year">{data.birth?.place?.country.en}</span>
+                        </div>
                     </div>
-                    <div className="flexColStart innerWidth info-text">
-                        <span className="name">{data.knownName?.en}</span>
-                        <span className="year">{data.birth?.place?.country.en}</span>
-                    </div>
-                    <div className="info-container">
-                        <a href={`${data.wikipedia?.english}`}>
-                            <button className="button more-info-btn">More Info</button>
-                        </a>
-                    </div>
-                </div>
+                </a>
             )}
         </div>
     )

@@ -1,19 +1,21 @@
 div .results-container {
-    row-gap: 1rem;
-    align-items: start;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
 }
 
 div .card {
-    width: 300px;
-    height: 200px;
+    height: 100%;
+    padding: 1rem;
     padding-top: 0;
     background: var(--primary);
     justify-content: start;
     border-radius: 10px;
     border: 2px black solid;
     box-shadow: 7px 7px 2px black;
+    font-weight: bold;
 
     animation-name: card-animation;
     animation-duration: .2s;
@@ -23,44 +25,25 @@ div .card {
 div .category-div {
     padding: 2px;
     font-weight: bold;
-    color: black;
-}
-
-div .category-container {
-    min-height: 80px;
-    justify-content: space-between;
-}
-
-.circle {
-    padding: 1rem;
-    height: 50px;
-    border-radius: 10px;
-    background-color: var(--secondary);
-}
-
-.circle-container {
-    height: 3rem;
-}
-
-.circle>span {
-    font-weight: bold;
+    border-radius: 0 0px 10px 10px;
+    color: white;
 }
 
 .category-text {
+    margin-top: .6rem;
     height: 1rem;
     font-size: 0.7rem;
-    font-weight: bold;
 }
 
-.info-text {
-    height: 50%;
+.info-text {}
+
+.name {}
+
+.year {
+    font-weight: normal;
 }
 
-.name {
-    font-weight: bold;
-}
-
-a>.more-info-btn {
+.more-info-btn {
     background-color: #D44D27;
     color: var(--black);
     font-size: 0.7rem;

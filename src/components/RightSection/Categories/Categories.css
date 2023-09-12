@@ -1,22 +1,14 @@
-div .categories-card {
-    width: 250px;
-    height: 200px;
-    background: #048789;
-    border-radius: 5px;
-    justify-content: start;
-    font-weight: bold;
-    box-shadow: 7px 7px 2px black;
-}
-
 div .cat-date-container {
+    display: flex;
     justify-content: space-between;
-    align-items: start;
     margin: 10px 0;
     height: 2rem;
 }
 
 div .prize-container {
+    display: flex;
     background-color: #E2A72E;
+    text-align: center;
     margin-top: 1rem;
     border-radius: 5px;
     box-shadow: 7px 7px 2px black;

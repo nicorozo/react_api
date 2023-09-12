@@ -1,22 +1,20 @@
 .App {
   background-image: url(https://cdn.discordapp.com/attachments/991460271677784234/1113331406156873748/evan.just.evan_the_guardians_of_the_valley_of_the_time_keepers__2dea7325-ab8b-4245-ab2a-2cea2b739a6b.png);
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
 
+  height: 100vh;
 }
 
 div .window-section {
   background-color: var(--white);
   border-radius: 10px;
-  justify-content: start;
-  height: 690px;
+  height: 100%;
 }
 
 div .window-container {
-  justify-content: start;
-  align-items: start;
+  display: flex;
   margin: 0;
   width: 100%;
   height: 100%;

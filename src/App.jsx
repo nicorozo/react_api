@@ -53,10 +53,10 @@ function App() {
   }, [selector, yearFrom, yearTo, category, offset])
 
   return (
-    <div className='App paddings flexCenter'>
-      <section className='innerWidth flexColStart window-section '>
+    <div className='App'>
+      <section className='innerWidth window-section '>
         <Navbar />
-        <div className="flexStart window-container">
+        <div className=" window-container">
           <LeftMenu
             handleYearsFrom={setYearFrom}
             handleYearsTo={setYearTo}
