@@ -124,12 +124,40 @@ a {
 }
 
 @media (max-width: 640px) {
-  .primaryText {
-    font-size: 1.5rem;
+  .leftMenu-wrapper {
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    left: -100%;
+    top: 25px;
+    border-radius: 10px;
+    border: 2px black solid;
+    z-index: 99;
   }
 
-  .orangeText {
-    font-size: 1.2rem;
+  .mobile_menu {
+    display: flex;
+    position: absolute;
+    bottom: 10%;
+    right: 0%;
+
+  }
+
+  .mobile_menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(rgba(151, 151, 151, .5), rgba(155, 155, 155, .5));
+    border: #eaeaea 1px solid;
+  }
+
+  .mobile_menu-icon {
+    width: 80%;
+    height: 80%;
+    color: #131110;
   }
 }
 

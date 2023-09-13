@@ -11,3 +11,7 @@ div .navbar {
     width: 100px;
     color: black;
 }
+
+.mobile_menu {
+    display: none;
+}
