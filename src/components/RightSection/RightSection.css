@@ -9,3 +9,27 @@ div .rightSection-wrapper {
 .introduction {
     color: black;
 }
+
+.intro_section {
+    display: flex;
+    padding: 1rem;
+    list-style-position: inside;
+    align-items: center;
+    max-height: 50%;
+}
+
+.intro_list {
+    flex: 1;
+    list-style: disc inside;
+}
+
+.intro_img-container {
+    flex: 1;
+    overflow: hidden;
+    padding: .5rem;
+}
+
+.intro_img {
+    border-radius: 10px;
+    height: 100%;
+}
